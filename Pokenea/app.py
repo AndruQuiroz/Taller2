@@ -1,12 +1,13 @@
 import os
 import random
+import socket 
 from flask import Flask, jsonify, render_template_string
 
 # Inicializar la aplicación Flask
 app = Flask(__name__)
 
-# Obtener el ID del contenedor (hostname)
-container_id = os.hostname()
+
+container_id = socket.gethostname()
 
 # --- Base de datos "quemada" de Pokeneas ---
 # RECUERDA: Reemplaza las URLs de 'imagen' con las URLs públicas de tu bucket S3.
